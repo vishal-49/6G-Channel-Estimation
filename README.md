@@ -11,7 +11,7 @@
 
 An end-to-end deep learning framework for accurate 6G channel estimation using **RDMSNet**, complete benchmarking, and an interactive Streamlit web application.
 
-🌐 **Live Demo:** https://6g-channel-estimation-g8s93qkzeqgbjbj6tr2s63.streamlit.app
+🌐 **Live Demo:** [https://6g-channel-estimation-g8s93qkzeqgbjbj6tr2s63.streamlit.app](https://6g-channel-estimation-g8s93qkzeqgbjbj6tr2s63.streamlit.app/)
 
 <br>
 
@@ -200,3 +200,372 @@ Performance Evaluation
 | **Output Layer** | Reconstructs the estimated wireless channel. |
 
 ---
+
+# 📂 Dataset
+
+The framework is trained and evaluated using a **synthetically generated 6G Channel Estimation dataset** stored in **HDF5 (.h5)** format. The dataset contains diverse wireless channel conditions to simulate realistic communication environments and enable fair benchmarking of deep learning models.
+
+## 📊 Dataset Overview
+
+| Property | Value |
+|----------|-------|
+| Dataset Format | HDF5 (.h5) |
+| Total Samples | 10,000 |
+| Input Shape | (2, 14, 612) |
+| Output Shape | (2, 14, 612) |
+| Data Type | float32 |
+| Carrier Frequency | 7 GHz |
+| MIMO Configuration | 1 × 1 |
+| SNR Range | -10 dB to 30 dB |
+| Doppler Range | 5 Hz – 5000 Hz |
+| Speed Range | 1 – 120 m/s |
+
+---
+
+## 📁 Dataset Structure
+
+```text
+6G_ChanEst_Dataset_10k_Samples.h5
+│
+├── X_input
+├── Y_label
+├── logs
+│   ├── snrLog_dB
+│   ├── dopplerLog_Hz
+│   ├── delaySpreadLog_s
+│   ├── speedLog_mps
+│   └── ...
+└── meta
+    ├── cfg_json
+    └── datasetMeta_json
+```
+
+---
+
+## 📥 Input Tensor
+
+The input tensor consists of **complex-valued Channel State Information (CSI)** represented using two channels:
+
+| Channel | Description |
+|---------|-------------|
+| Channel 0 | Real Part |
+| Channel 1 | Imaginary Part |
+
+Tensor Shape:
+
+```text
+(2, 14, 612)
+```
+
+where:
+
+- **2** → Real & Imaginary Channels
+- **14** → OFDM Symbols
+- **612** → Active Subcarriers
+
+---
+
+## 🎯 Target Tensor
+
+The target tensor has the same dimensionality as the input and represents the corresponding ground-truth channel used during supervised learning.
+
+```text
+Target Shape = (2, 14, 612)
+```
+
+---
+
+## 🌍 Channel Diversity
+
+The dataset includes a wide range of wireless propagation conditions, including:
+
+- Multipath Fading
+- Doppler Shift
+- Delay Spread
+- Variable Signal-to-Noise Ratios (SNR)
+- Different User Speeds
+- Multiple Channel Profiles
+
+These variations help evaluate the robustness and generalization capability of different deep learning architectures.
+
+---
+
+# 🤖 Benchmark Models
+
+To systematically evaluate the contribution of each architectural component, an **ablation study** was performed. Starting from a simple convolutional baseline, new modules were progressively introduced to analyze their impact on channel estimation performance.
+
+This incremental design strategy provides a fair comparison and demonstrates how each component contributes to the overall performance of the proposed framework.
+
+## 📊 Ablation Study
+
+| Model | Architecture | Newly Added Component |
+| :---: | ------------ | --------------------- |
+| **M1** | Baseline Convolutional Network | Baseline Model |
+| **M2** | M1 + Residual Dense Blocks | Residual Dense Feature Learning |
+| **M3** | M2 + Residual SE Blocks | Channel Attention (SE) |
+| **M4** | M3 + ASPP Module | Multi-Scale Context Extraction |
+| ⭐ **M5 (Proposed RDMSNet)** | M4 + Multi-Scale Fusion + Global Residual Learning | Final Proposed Architecture |
+
+---
+
+## 🏗️ Progressive Model Evolution
+
+```text
+M1
+Baseline CNN
+      │
+      ▼
+M2
++ Residual Dense Blocks
+      │
+      ▼
+M3
++ Residual SE Blocks
+      │
+      ▼
+M4
++ ASPP Module
+      │
+      ▼
+⭐ M5 (RDMSNet)
++ Multi-Scale Fusion
++ Global Residual Learning
+```
+
+---
+
+## 🎯 Purpose of the Ablation Study
+
+The objective of the ablation study is to evaluate the individual contribution of each architectural enhancement toward improving channel estimation performance.
+
+Each model was trained using:
+
+- ✅ Same Dataset
+- ✅ Same Data Preprocessing
+- ✅ Same Training Strategy
+- ✅ Same Hyperparameters
+- ✅ Same 5-Fold Cross Validation Protocol
+- ✅ Same Evaluation Metrics (NMSE, RMSE, MSE, PSNR, and R²)
+
+This controlled experimental setup ensures that any improvement in performance is solely due to the newly introduced architectural component.
+
+---
+
+# 📊 Results
+
+The proposed **RDMSNet (M5)** was evaluated using both **5-Fold Cross-Validation** and the **Final Selected Model**. Performance was assessed using standard regression metrics to measure channel estimation accuracy and reconstruction quality.
+
+## 📈 Performance Summary
+
+| Metric | 5-Fold Cross-Validation | Final Selected Model |
+|:-------|:-----------------------:|:--------------------:|
+| **MSE ↓** | **0.1358** | **0.1352** |
+| **NMSE ↓** | **0.3656** | **0.3419** |
+| **R² Score ↑** | **0.7113** | **0.7127** |
+| **PSNR (dB) ↑** | **19.88** | **19.90** |
+
+> **Note:** Lower values are better for **MSE** and **NMSE**, while higher values are better for **R² Score** and **PSNR**.
+
+---
+
+## 🏆 Key Observations
+
+- ✅ The proposed **RDMSNet (M5)** achieved the best overall performance among all ablation models.
+- ✅ The final selected model reduced **NMSE** from **0.3656** to **0.3419**, demonstrating improved channel estimation accuracy.
+- ✅ The **R² Score** increased from **0.7113** to **0.7127**, indicating a stronger agreement between the predicted and ground-truth channels.
+- ✅ The final model achieved a **PSNR of 19.90 dB**, reflecting high-quality channel reconstruction.
+- ✅ Consistent performance across **5-Fold Cross-Validation** demonstrates the robustness and generalization capability of the proposed architecture.
+
+---
+
+## 📌 Evaluation Metrics
+
+| Metric | Description |
+|---------|-------------|
+| **MSE** | Measures the average squared error between the predicted and ground-truth channel. Lower values indicate better performance. |
+| **NMSE** | Measures normalized reconstruction error, making comparisons independent of signal power. Lower values are better. |
+| **R² Score** | Indicates how well the predicted channel matches the actual channel. Values closer to **1** represent better prediction accuracy. |
+| **PSNR** | Measures reconstruction quality in decibels (dB). Higher values indicate better signal reconstruction quality. |
+
+---
+
+# 🌐 Web Application
+
+An interactive **Streamlit Web Application** has been developed to demonstrate the proposed framework in a user-friendly environment. The application allows users to upload input channel data, perform inference using the trained **RDMSNet** model, and visualize the predicted channel estimation results in real time.
+
+### ✨ Features
+
+- 📂 Upload custom HDF5 (.h5) input files
+- ⚡ Real-time channel estimation
+- 🧠 Inference using the trained RDMSNet model
+- 📊 Interactive prediction interface
+- 🎯 Lightweight and easy to use
+
+<p align="center">
+
+> 📌 Web application screenshot will be added here.
+
+<!-- Replace with actual screenshot later -->
+
+<img src="assets/webapp.png" width="90%">
+
+</p>
+
+> **Live Demo:** *(https://6g-channel-estimation-g8s93qkzeqgbjbj6tr2s63.streamlit.app/)*
+
+---
+
+# ⚙️ Installation
+
+Follow the steps below to set up the project on your local machine.
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/vishal-49/6G-Channel-Estimation.git
+```
+
+---
+
+## 2. Navigate to the Project Directory
+
+```bash
+cd 6G-Channel-Estimation
+```
+
+---
+
+## 3. (Optional) Create a Virtual Environment
+
+### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### macOS / Linux
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+## 4. Install Required Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 5. Launch the Streamlit Application
+
+```bash
+streamlit run app.py
+```
+
+The application will automatically open in your default browser.
+
+---
+
+# 🚀 Usage
+
+After launching the Streamlit application, follow these steps:
+
+1. Open the web interface.
+2. Upload a sample **HDF5 (.h5)** channel input.
+3. Click **Estimate Channel**.
+4. The trained **RDMSNet** model performs inference.
+5. View the predicted channel estimation results.
+
+---
+
+## 📂 Sample Inputs
+
+Example input files are available inside the **samples/** directory for quick testing.
+
+---
+
+## 🧠 Model Files
+
+The trained model and architecture are stored inside the **model/** directory and are automatically loaded by the application during inference.
+
+---
+
+# 📁 Project Structure
+
+```text
+6G-Channel-Estimation/
+│
+├── model/                  # Trained model files
+├── samples/                # Sample input files
+├── assets/                 # Images used in README
+│
+├── app.py                  # Streamlit web application
+├── app_v2.py               # Alternative application version
+├── deployment_model.py     # Model loading & inference
+├── utils.py                # Utility functions
+├── requirements.txt        # Project dependencies
+├── README.md               # Project documentation
+│
+└── __pycache__/            # Python cache files
+```
+
+---
+
+# 🛠️ Technologies Used
+
+| Category | Technology |
+|----------|------------|
+| Programming Language | Python |
+| Deep Learning | PyTorch |
+| Web Framework | Streamlit |
+| Dataset Format | HDF5 |
+| Numerical Computing | NumPy |
+| Visualization | Matplotlib |
+| Version Control | Git & GitHub |
+
+---
+
+# 🔮 Future Work
+
+The proposed framework can be further extended in several directions:
+
+- 🚀 Support for Massive MIMO systems
+- 📡 Integration with RIS-assisted communication
+- 🤖 Transformer-based channel estimation models
+- ⚡ Real-time edge deployment
+- 📊 Larger benchmark datasets
+- ☁️ Cloud-based inference and deployment
+
+---
+
+# 👨‍💻 Author
+
+<div align="center">
+
+## Vishal Singh
+
+**Bachelor in Technology from National Institute of Technology Agartala**
+
+Passionate about **Artificial Intelligence, Deep Learning, Computer Vision, and Next-Generation Wireless Communication Systems.**
+
+<p>
+
+<a href="https://github.com/vishal-49">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github">
+</a>
+
+<a href="(https://www.linkedin.com/in/vishal-singh-74009b38a)">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin">
+</a>
+
+</p>
+
+⭐ If you found this project helpful, consider giving it a star.
+
+</div>
+
