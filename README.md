@@ -1,5 +1,9 @@
 # 📡 A Reconfigurable Framework and Benchmark for Deep Learning-Based 6G Channel Estimation
 
+<p align="center">
+  <img src="assets/hero_banner.png" alt="6G Channel Estimation Banner" width="100%">
+</p>
+
 <div align="center">
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
@@ -149,11 +153,11 @@ The proposed framework follows a modular deep learning pipeline designed specifi
 
 <p align="center">
 
-> 📌 **Architecture Diagram will be added here**
 
-<!-- Replace with your image later -->
 
-<img src="assets/architecture.png" width="95%">
+<p align="center">
+  <img src="assets/architecture.png" alt="Framework Architecture" width="100%">
+</p>
 
 </p>
 
@@ -198,6 +202,10 @@ Performance Evaluation
 | **ASPP Module** | Captures multi-scale contextual information using different dilation rates. |
 | **Multi-Scale Fusion** | Combines features extracted at different receptive fields. |
 | **Output Layer** | Reconstructs the estimated wireless channel. |
+
+<p align="center">
+  <img src="assets/workflow.png" alt="Workflow Diagram" width="90%">
+</p>
 
 ---
 
@@ -332,6 +340,10 @@ M4
 + Global Residual Learning
 ```
 
+<p align="center">
+  <img src="assets/ablation_pipeline.png" alt="Ablation Pipeline" width="100%">
+</p>
+
 ---
 
 ## 🎯 Purpose of the Ablation Study
@@ -365,6 +377,10 @@ The proposed **RDMSNet (M5)** was evaluated using both **5-Fold Cross-Validation
 | **PSNR (dB) ↑** | **19.88** | **19.90** |
 
 > **Note:** Lower values are better for **MSE** and **NMSE**, while higher values are better for **R² Score** and **PSNR**.
+
+<p align="center">
+  <img src="assets/results_chart.png" alt="Results Comparison" width="90%">
+</p>
 
 ---
 
