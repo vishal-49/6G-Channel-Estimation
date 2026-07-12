@@ -407,27 +407,35 @@ The proposed **RDMSNet (M5)** was evaluated using both **5-Fold Cross-Validation
 
 # 🌐 Web Application
 
-An interactive **Streamlit Web Application** has been developed to demonstrate the proposed framework in a user-friendly environment. The application allows users to upload input channel data, perform inference using the trained **RDMSNet** model, and visualize the predicted channel estimation results in real time.
+The project includes an interactive **Streamlit-based web application** that enables users to perform real-time **6G channel estimation** using the proposed **RDMSNet** model. The application provides an intuitive interface for uploading channel data, running inference, and visualizing the estimated channel.
 
-### ✨ Features
+## ✨ Key Features
 
-- 📂 Upload custom HDF5 (.h5) input files
-- ⚡ Real-time channel estimation
+- 📂 Upload HDF5 (.h5) channel data
 - 🧠 Inference using the trained RDMSNet model
-- 📊 Interactive prediction interface
-- 🎯 Lightweight and easy to use
+- ⚡ Fast and interactive predictions
+- 📊 Visualization of estimated channel outputs
+- 💻 Clean and user-friendly interface
+
+---
+
+## 📸 Application Screenshots
+
+### 🏠 Application Interface
 
 <p align="center">
-
-> 📌 Web application screenshot will be added here.
-
-<!-- Replace with actual screenshot later -->
-
-<img src="assets/webapp.png" width="90%">
-
+  <img src="assets/app1.png" alt="Application Home" width="48%">
+  <img src="assets/app2.png" alt="Upload Interface" width="48%">
 </p>
 
-> **Live Demo:** *(https://6g-channel-estimation-g8s93qkzeqgbjbj6tr2s63.streamlit.app/)*
+<p align="center">
+  <img src="assets/app3.png" alt="Prediction Results" width="48%">
+  <img src="assets/app4.png" alt="Visualization" width="48%">
+</p>
+
+---
+
+> **Live Demo:** *[https://6g-channel-estimation-g8s93qkzeqgbjbj6tr2s63.streamlit.app](https://6g-channel-estimation-g8s93qkzeqgbjbj6tr2s63.streamlit.app/)*
 
 ---
 
