@@ -6,10 +6,19 @@
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red)
-![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-FF4B4B)
-![License](https://img.shields.io/badge/License-MIT-green)
+<p align="center">
+
+<img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white">
+
+<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
+
+<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white">
+
+<img src="https://img.shields.io/badge/HDF5-003B57?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Deep%20Learning-6G-blue?style=for-the-badge">
+
+</p>
 
 ### 🚀 Deep Learning Framework for 6G Wireless Channel Estimation
 
