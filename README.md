@@ -582,7 +582,7 @@ The proposed framework can be further extended in several directions:
 
 ## Vishal Singh
 
-**Bachelor in Technology from National Institute of Technology Agartala**
+**Bachelor in Technology from National Institute of Technology, Agartala**
 
 Passionate about **Artificial Intelligence, Deep Learning, Computer Vision, and Next-Generation Wireless Communication Systems.**
 
