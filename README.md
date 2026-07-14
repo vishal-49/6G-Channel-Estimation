@@ -1,4 +1,4 @@
-# 📡 A Reconfigurable Framework and Benchmark for Deep Learning-Based 6G Channel Estimation
+# A Reconfigurable Framework and Benchmark for Deep Learning-Based 6G Channel Estimation
 
 <p align="center">
   <img src="assets/hero_banner.png" alt="6G Channel Estimation Banner" width="100%">
@@ -20,7 +20,7 @@
 
 </p>
 
-### 🚀 Deep Learning Framework for 6G Wireless Channel Estimation
+### Deep Learning Framework for 6G Wireless Channel Estimation
 
 An end-to-end deep learning framework for accurate 6G channel estimation using **RDMSNet**, complete benchmarking, and an interactive Streamlit web application.
 
@@ -30,7 +30,7 @@ An end-to-end deep learning framework for accurate 6G channel estimation using *
 
 <div align="center">
 
-| 🚀 Framework | 🤖 Models | 📊 Validation | 🌐 Deployment |
+| Framework | Models | Validation | Deployment |
 |:-----------:|:---------:|:-------------:|:-------------:|
 | **RDMSNet** | **7 Deep Learning Models** | **5-Fold Cross Validation** | **Streamlit Web App** |
 
@@ -43,7 +43,7 @@ An end-to-end deep learning framework for accurate 6G channel estimation using *
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Problem Statement](#-problem-statement)
@@ -63,7 +63,7 @@ An end-to-end deep learning framework for accurate 6G channel estimation using *
 
 ---
 
-# 📖 Overview
+# Overview
 
 Accurate **Channel State Information (CSI)** is one of the fundamental requirements for reliable and high-speed communication in next-generation **6G wireless networks**. As wireless environments become increasingly dynamic due to high mobility, multipath propagation, Doppler effects, and complex channel conditions, conventional channel estimation techniques often struggle to maintain both estimation accuracy and computational efficiency.
 
@@ -75,7 +75,7 @@ To ensure reliable performance evaluation, the framework incorporates **5-Fold C
 
 ---
 
-# 🎯 Problem Statement
+# Problem Statement
 
 Future **6G wireless communication systems** demand highly accurate and efficient channel estimation to support ultra-high data rates, ultra-low latency, massive connectivity, and intelligent communication services. However, accurately estimating wireless channels remains a significant challenge due to rapidly varying propagation environments, severe multipath fading, Doppler shifts, noise, and increasing system complexity.
 
@@ -87,7 +87,7 @@ This project addresses these challenges by developing a **reconfigurable deep le
 
 ---
 
-# 💡 Motivation
+# Motivation
 
 The rapid evolution of wireless communication technologies has created a growing demand for intelligent and adaptive channel estimation techniques. As 6G networks aim to support applications such as autonomous vehicles, holographic communication, extended reality (XR), and massive Internet of Things (IoT), traditional estimation methods become increasingly inadequate due to their limited ability to model complex and nonlinear wireless channels.
 
@@ -97,7 +97,7 @@ Furthermore, this work introduces **RDMSNet**, a lightweight architecture design
 
 ---
 
-# ✨ Features
+# Features
 
 This framework is designed to provide a complete research and benchmarking environment for **Deep Learning-Based 6G Channel Estimation**.
 
@@ -105,7 +105,7 @@ This framework is designed to provide a complete research and benchmarking envir
 <tr>
 <td width="50%">
 
-### 🧠 Deep Learning Models
+### Deep Learning Models
 - RDMSNet (Proposed)
 - CNN Baseline
 - RCNN
@@ -118,7 +118,7 @@ This framework is designed to provide a complete research and benchmarking envir
 
 <td width="50%">
 
-### 📊 Performance Evaluation
+### Performance Evaluation
 - 5-Fold Cross Validation
 - NMSE
 - RMSE
@@ -132,7 +132,7 @@ This framework is designed to provide a complete research and benchmarking envir
 <tr>
 <td>
 
-### ⚙️ Framework
+### Framework
 - Modular Code Structure
 - Easy Model Training
 - Easy Testing
@@ -143,7 +143,7 @@ This framework is designed to provide a complete research and benchmarking envir
 
 <td>
 
-### 🌐 Deployment
+### Deployment
 - Streamlit Web Application
 - Interactive Prediction
 - GPU Support (PyTorch)
@@ -156,7 +156,7 @@ This framework is designed to provide a complete research and benchmarking envir
 
 ---
 
-# 🏗️ Framework Architecture
+# Framework Architecture
 
 The proposed framework follows a modular deep learning pipeline designed specifically for **6G channel estimation**. Each stage is independently configurable, allowing researchers to benchmark multiple architectures while maintaining a consistent training and evaluation pipeline.
 
@@ -170,7 +170,7 @@ The proposed framework follows a modular deep learning pipeline designed specifi
 
 </p>
 
-## 🔄 Workflow
+## Workflow
 
 ```text
 Input CSI
@@ -200,7 +200,7 @@ Channel Reconstruction
 Performance Evaluation
 ```
 
-## 🧩 Key Components
+## Key Components
 
 | Component | Purpose |
 |-----------|---------|
@@ -218,11 +218,11 @@ Performance Evaluation
 
 ---
 
-# 📂 Dataset
+# Dataset
 
 The framework is trained and evaluated using a **synthetically generated 6G Channel Estimation dataset** stored in **HDF5 (.h5)** format. The dataset contains diverse wireless channel conditions to simulate realistic communication environments and enable fair benchmarking of deep learning models.
 
-## 📊 Dataset Overview
+## Dataset Overview
 
 | Property | Value |
 |----------|-------|
@@ -239,7 +239,7 @@ The framework is trained and evaluated using a **synthetically generated 6G Chan
 
 ---
 
-## 📁 Dataset Structure
+## Dataset Structure
 
 ```text
 6G_ChanEst_Dataset_10k_Samples.h5
@@ -259,7 +259,7 @@ The framework is trained and evaluated using a **synthetically generated 6G Chan
 
 ---
 
-## 📥 Input Tensor
+## Input Tensor
 
 The input tensor consists of **complex-valued Channel State Information (CSI)** represented using two channels:
 
@@ -282,7 +282,7 @@ where:
 
 ---
 
-## 🎯 Target Tensor
+## Target Tensor
 
 The target tensor has the same dimensionality as the input and represents the corresponding ground-truth channel used during supervised learning.
 
@@ -292,7 +292,7 @@ Target Shape = (2, 14, 612)
 
 ---
 
-## 🌍 Channel Diversity
+## Channel Diversity
 
 The dataset includes a wide range of wireless propagation conditions, including:
 
@@ -307,13 +307,13 @@ These variations help evaluate the robustness and generalization capability of d
 
 ---
 
-# 🤖 Benchmark Models
+# Benchmark Models
 
 To systematically evaluate the contribution of each architectural component, an **ablation study** was performed. Starting from a simple convolutional baseline, new modules were progressively introduced to analyze their impact on channel estimation performance.
 
 This incremental design strategy provides a fair comparison and demonstrates how each component contributes to the overall performance of the proposed framework.
 
-## 📊 Ablation Study
+## Ablation Study
 
 | Model | Architecture | Newly Added Component |
 | :---: | ------------ | --------------------- |
@@ -325,7 +325,7 @@ This incremental design strategy provides a fair comparison and demonstrates how
 
 ---
 
-## 🏗️ Progressive Model Evolution
+## Progressive Model Evolution
 
 ```text
 M1
@@ -344,7 +344,7 @@ M4
 + ASPP Module
       │
       ▼
-⭐ M5 (RDMSNet)
+M5 (RDMSNet)
 + Multi-Scale Fusion
 + Global Residual Learning
 ```
@@ -355,7 +355,7 @@ M4
 
 ---
 
-## 🎯 Purpose of the Ablation Study
+## Purpose of the Ablation Study
 
 The objective of the ablation study is to evaluate the individual contribution of each architectural enhancement toward improving channel estimation performance.
 
@@ -372,11 +372,11 @@ This controlled experimental setup ensures that any improvement in performance i
 
 ---
 
-# 📊 Results
+# Results
 
 The proposed **RDMSNet (M5)** was evaluated using both **5-Fold Cross-Validation** and the **Final Selected Model**. Performance was assessed using standard regression metrics to measure channel estimation accuracy and reconstruction quality.
 
-## 📈 Performance Summary
+## Performance Summary
 
 | Metric | 5-Fold Cross-Validation | Final Selected Model |
 |:-------|:-----------------------:|:--------------------:|
@@ -393,7 +393,7 @@ The proposed **RDMSNet (M5)** was evaluated using both **5-Fold Cross-Validation
 
 ---
 
-## 🏆 Key Observations
+## Key Observations
 
 - ✅ The proposed **RDMSNet (M5)** achieved the best overall performance among all ablation models.
 - ✅ The final selected model reduced **NMSE** from **0.3656** to **0.3419**, demonstrating improved channel estimation accuracy.
@@ -403,7 +403,7 @@ The proposed **RDMSNet (M5)** was evaluated using both **5-Fold Cross-Validation
 
 ---
 
-## 📌 Evaluation Metrics
+## Evaluation Metrics
 
 | Metric | Description |
 |---------|-------------|
@@ -414,23 +414,23 @@ The proposed **RDMSNet (M5)** was evaluated using both **5-Fold Cross-Validation
 
 ---
 
-# 🌐 Web Application
+# Web Application
 
 The project includes an interactive **Streamlit-based web application** that enables users to perform real-time **6G channel estimation** using the proposed **RDMSNet** model. The application provides an intuitive interface for uploading channel data, running inference, and visualizing the estimated channel.
 
-## ✨ Key Features
+## Key Features
 
-- 📂 Upload HDF5 (.h5) channel data
-- 🧠 Inference using the trained RDMSNet model
-- ⚡ Fast and interactive predictions
-- 📊 Visualization of estimated channel outputs
-- 💻 Clean and user-friendly interface
+- Upload HDF5 (.h5) channel data
+- Inference using the trained RDMSNet model
+- Fast and interactive predictions
+- Visualization of estimated channel outputs
+- Clean and user-friendly interface
 
 ---
 
-## 📸 Application Screenshots
+## Application Screenshots
 
-### 🏠 Application Interface
+### Application Interface
 
 <p align="center">
   <img src="assets/app1.png" alt="Application Home" width="48%">
@@ -448,7 +448,7 @@ The project includes an interactive **Streamlit-based web application** that ena
 
 ---
 
-# ⚙️ Installation
+# Installation
 
 Follow the steps below to set up the project on your local machine.
 
@@ -504,7 +504,7 @@ The application will automatically open in your default browser.
 
 ---
 
-# 🚀 Usage
+# Usage
 
 After launching the Streamlit application, follow these steps:
 
@@ -516,19 +516,19 @@ After launching the Streamlit application, follow these steps:
 
 ---
 
-## 📂 Sample Inputs
+## Sample Inputs
 
 Example input files are available inside the **samples/** directory for quick testing.
 
 ---
 
-## 🧠 Model Files
+## Model Files
 
 The trained model and architecture are stored inside the **model/** directory and are automatically loaded by the application during inference.
 
 ---
 
-# 📁 Project Structure
+# Project Structure
 
 ```text
 6G-Channel-Estimation/
@@ -549,7 +549,7 @@ The trained model and architecture are stored inside the **model/** directory an
 
 ---
 
-# 🛠️ Technologies Used
+# Technologies Used
 
 | Category | Technology |
 |----------|------------|
@@ -563,20 +563,20 @@ The trained model and architecture are stored inside the **model/** directory an
 
 ---
 
-# 🔮 Future Work
+# Future Work
 
 The proposed framework can be further extended in several directions:
 
-- 🚀 Support for Massive MIMO systems
-- 📡 Integration with RIS-assisted communication
-- 🤖 Transformer-based channel estimation models
-- ⚡ Real-time edge deployment
-- 📊 Larger benchmark datasets
-- ☁️ Cloud-based inference and deployment
+- Support for Massive MIMO systems
+- Integration with RIS-assisted communication
+- Transformer-based channel estimation models
+- Real-time edge deployment
+- Larger benchmark datasets
+- Cloud-based inference and deployment
 
 ---
 
-# 👨‍💻 Author
+# Author
 
 <div align="center">
 
