@@ -592,7 +592,7 @@ Passionate about **Artificial Intelligence, Deep Learning, Computer Vision, and 
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github">
 </a>
 
-<a href="(https://www.linkedin.com/in/vishal-singh-74009b38a)">
+<a href="(linkedin.com/in/vishal-singh-74009b38a)">
 <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin">
 </a>
 
