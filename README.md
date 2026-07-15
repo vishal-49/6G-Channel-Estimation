@@ -433,13 +433,13 @@ The project includes an interactive **Streamlit-based web application** that ena
 ### Application Interface
 
 <p align="center">
-  <img src="assets/app1.png" alt="Application Home" width="48%">
-  <img src="assets/app2.png" alt="Upload Interface" width="48%">
+  <img src="assets/A1.png" alt="Application Home" width="48%">
+  <img src="assets/A2.png" alt="Upload Interface" width="48%">
 </p>
 
 <p align="center">
-  <img src="assets/app3.png" alt="Prediction Results" width="48%">
-  <img src="assets/app4.png" alt="Visualization" width="48%">
+  <img src="assets/A3.png" alt="Prediction Results" width="48%">
+  <img src="assets/A4.png" alt="Visualization" width="48%">
 </p>
 
 ---
