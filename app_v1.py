@@ -124,8 +124,34 @@ if st.session_state.last_input_option != input_option:
     st.rerun()
 
 if input_option == "Use Built-in Sample":
-    sample_choice = st.selectbox("Select Built-in Sample", ["Sample 1", "Sample 2", "Sample 3"])
-    sample_path = f"samples/X_input_sample_{int(sample_choice.split()[-1]) - 1}.npy"
+    import os
+
+    sample_files = sorted(
+        [
+            f
+            for f in os.listdir("samples")
+            if f.startswith("X_input_sample_")
+            and f.endswith(".npy")
+        ],
+        key=lambda x: int(x.split("_")[-1].replace(".npy", ""))
+    )
+
+    sample_names = [
+        f"Sample {i+1}"
+        for i in range(len(sample_files))
+    ]
+
+    sample_choice = st.selectbox(
+        "Select Built-in Sample",
+        sample_names
+    )
+
+    sample_idx = sample_names.index(sample_choice)
+
+    sample_path = os.path.join(
+        "samples",
+        sample_files[sample_idx]
+    )
     
     try:
         signal = np.load(sample_path)
