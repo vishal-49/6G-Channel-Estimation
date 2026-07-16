@@ -6,7 +6,7 @@ import os
 # Configuration
 # ===========================
 
-DATASET_PATH = "6G_ChanEst_Dataset_10k_Samples.h5"   # Change if required
+DATASET_PATH = "/Users/vishalsingh/Downloads/6G_ChanEst_Dataset_10k_Samples.h5"
 OUTPUT_DIR = "samples"
 
 NUM_SAMPLES = 100      # Number of samples to export
