@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import time
 import io
@@ -109,6 +110,8 @@ def get_model():
 
 model = get_model()
 
+metadata = pd.read_csv("samples/sample_metadata.csv")
+
 st.header("Upload Channel Data")
 st.write(
     "Provide a pilot signal tensor file in the standard NumPy binary (.npy) format. "
@@ -143,10 +146,21 @@ if input_option == "Use Built-in Sample":
 
     sample_choice = st.selectbox(
         "Select Built-in Sample",
-        sample_names
+        [f"Sample {i}" for i in range(1, 101)]
     )
 
     sample_idx = sample_names.index(sample_choice)
+
+    row = metadata.iloc[sample_idx]
+
+    st.markdown("#### Sample Information")
+
+    c1, c2, c3, c4 = st.columns(4)
+
+    c1.metric("Delay Profile", row["delay_profile"])
+    c2.metric("SNR (dB)", f"{row['snr']:.1f}")
+    c3.metric("Speed (m/s)", f"{row['speed']:.1f}")
+    c4.metric("Doppler (Hz)", f"{row['doppler']:.0f}")  
 
     sample_path = os.path.join(
         "samples",
