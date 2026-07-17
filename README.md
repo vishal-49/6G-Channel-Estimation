@@ -598,7 +598,7 @@ Passionate about **Artificial Intelligence, Deep Learning, Computer Vision, and 
 
 </p>
 
-⭐ If you found this project helpful, consider giving it a star.
+If you found this project helpful, consider giving it a ⭐.
 
 </div>
 
