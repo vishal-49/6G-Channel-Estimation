@@ -24,7 +24,7 @@
 
 An end-to-end deep learning framework for accurate 6G channel estimation using **RDMSNet**, complete benchmarking, and an interactive Streamlit web application.
 
-**Live Demo:** https://6g-channel-estimation.streamlit.app/
+**Live Demo :** https://6g-channel-estimation.streamlit.app/
 
 <br>
 
