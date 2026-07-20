@@ -361,12 +361,12 @@ The objective of the ablation study is to evaluate the individual contribution o
 
 Each model was trained using:
 
-- ✅ Same Dataset
-- ✅ Same Data Preprocessing
-- ✅ Same Training Strategy
-- ✅ Same Hyperparameters
-- ✅ Same 5-Fold Cross Validation Protocol
-- ✅ Same Evaluation Metrics (NMSE, RMSE, MSE, PSNR, and R²)
+- 1. Same Dataset
+- 2. Same Data Preprocessing
+- 3. Same Training Strategy
+- 4. Same Hyperparameters
+- 5. Same 5-Fold Cross Validation Protocol
+- 6. Same Evaluation Metrics (NMSE, RMSE, MSE, PSNR, and R²)
 
 This controlled experimental setup ensures that any improvement in performance is solely due to the newly introduced architectural component.
 
